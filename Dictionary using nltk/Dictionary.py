@@ -10,3 +10,10 @@ def speak(audio):
     voice = engine.setProperty('voice',voices[0].id)
     engine.say(audio)
     engine.runAndWait()
+    
+def find_synonym(word):
+    syn_word = set()
+    for syn in wordnet.synset(word):
+        for lemma in syn.lemmas():
+            syn_word.add(lemma.name())
+    return list(syn_word)
