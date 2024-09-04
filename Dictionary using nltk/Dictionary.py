@@ -17,3 +17,19 @@ def find_synonym(word):
         for lemma in syn.lemmas():
             syn_word.add(lemma.name())
     return list(syn_word)
+
+def meaning():
+    query = str(text.get())
+    synsets = wordnet.synset('query')
+    res = ''
+    
+    if synsets:
+        for syn in synsets:
+            res += f'{syn.definition()}\n'
+            spokenText.set(res)
+            speak("The meaning is "+res)
+    else:
+        res = 'No definitions found.'
+        spokenText.set(res)
+        speak(res)
+    
