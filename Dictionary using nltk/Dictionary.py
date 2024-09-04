@@ -32,4 +32,21 @@ def meaning():
         res = 'No definitions found.'
         spokenText.set(res)
         speak(res)
-    
+        
+win = Tk()
+win.title("Arneeth's Dictionary")
+win.geometry('700x300')
+win.config(bg='Grey')
+
+text=StringVar(win)
+spokenText=StringVar(win)
+
+Label(win, text="Arneeth - Dictionay", bg='SlateGray1',fg='gray30', font=('Times', 20, 'bold')).place(x=100, y=10)
+Label(win, text='Please enter the word', bg='SlateGray1', font=('calibre', 13, 'normal'),anchor="e", justify=LEFT).place(x=20, y=70)
+Entry(win, textvariable=text, width=35, font=('calibre', 13, 'normal')).place(x=20, y=110)
+queryLabel = Label(win, textvariable=spokenText, bg='SlateGray1', anchor="e",
+                   font=('calibre', 13, 'normal'), justify=LEFT, wraplength=500).place(x=20, y=130)
+spokenText.set("Which word do you want to find the meaning of, sir/madam?")
+speak("Which word do you want to find the meaning of, sir or madam")
+Button(win, text="Speak Meaning", bg='SlateGray4', font=('calibre', 13),command=meaning).place(x=230, y=350)
+win.mainloop()
