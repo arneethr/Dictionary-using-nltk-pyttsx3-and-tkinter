@@ -176,10 +176,6 @@ win.mainloop()
 
 Contributions are welcome! Please feel free to submit a Pull Request or open an issue for any bugs, improvements, or features you'd like to see.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - [NLTK](https://www.nltk.org/) for providing the WordNet interface.
